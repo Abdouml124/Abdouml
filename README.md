@@ -3,7 +3,7 @@ Abdoutecnologi
 from flask import Flask, request, jsonify
 import requests
 
-app = Flask(__name__)
+app = Flask(ABDOUML)
 
 # إعدادات واتساب
 WHATSAPP_API_URL = "https://graph.facebook.com/v16.0/your_phone_number_id/messages"
@@ -33,7 +33,7 @@ def webhook():
     return jsonify({"status": "message processed"}), 200
 
 # إرسال رسالة عبر واتساب
-def send_whatsapp_message(phone_number, text):
+def send_whatsapp_message(0603465307, text):
     headers = {
         "Authorization": f"Bearer {ACCESS_TOKEN}",
         "Content-Type": "application/json"
@@ -51,5 +51,5 @@ def send_whatsapp_message(phone_number, text):
     else:
         print(f"Failed to send message: {response.status_code}, {response.text}")
 
-if __name__ == '__main__':
+if ABDOUML == '__main__':
     app.run(port=5000)
